@@ -38,6 +38,14 @@ class Song
       self.create_by_name(name)
     else self.find_by_name(name)
   end 
+  
+  def self.alphabetical()
+    @@all.sort_by{|x| x.name}
+  end 
+  
+  def new_from_file_name(name)
+    song = self.new 
+    song.name = (name.split(" - ")[1].chomp(".mp3"))
     
 
 end
